@@ -1,0 +1,25 @@
+---
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/justin-tuck/spring-cloudconfig-dc-tolls #default
+          #username: usname
+          #password: pass
+          search-paths:
+            - 'station*'
+          repos:
+            perf:
+              pattern: '*/perf'
+              uri: https://github.com/justin-tuck/spring-cloudconfig-dc-tolls-perf
+              search-paths:
+                - 'station*'
+security:
+  basic:
+    enabled: true
+  user:
+    name: pluralsight
+    password: pluralsight
